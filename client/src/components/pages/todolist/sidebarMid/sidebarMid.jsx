@@ -3,17 +3,18 @@ import ViewsBar from "./viewsBar";
 const allIcon = "M18.378,1.062H3.855c-0.309,0-0.559,0.25-0.559,0.559c0,0.309,0.25,0.559,0.559,0.559h13.964v13.964c0,0.309,0.25,0.559,0.559,0.559c0.31,0,0.56-0.25,0.56-0.559V1.621C18.938,1.312,18.688,1.062,18.378,1.062z M16.144,3.296H1.621c-0.309,0-0.559,0.25-0.559,0.559v14.523c0,0.31,0.25,0.56,0.559,0.56h14.523c0.309,0,0.559-0.25,0.559-0.56V3.855C16.702,3.546,16.452,3.296,16.144,3.296z M15.586,17.262c0,0.31-0.25,0.558-0.56,0.558H2.738c-0.309,0-0.559-0.248-0.559-0.558V4.972c0-0.309,0.25-0.559,0.559-0.559h12.289c0.31,0,0.56,0.25,0.56,0.559V17.262z"
 const todayIcon = "M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"
 const nextIcon = "M18.807,0.337h-3.616v1.808c0,0.475-0.384,0.859-0.859,0.859c-0.474,0-0.859-0.384-0.859-0.859V0.337H6.731v1.808c0,0.475-0.384,0.859-0.859,0.859c-0.474,0-0.859-0.384-0.859-0.859V0.337h-3.82c-0.474,0-0.859,0.384-0.859,0.859v17.61c0,0.477,0.384,0.859,0.859,0.859h17.613c0.474,0,0.859-0.382,0.859-0.859V1.195C19.665,0.721,19.281,0.337,18.807,0.337z M17.948,17.946H2.052V4.528h15.896V17.946z"
-function SidebarMid(){
-    return <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{width: "280px"}}>
+function SidebarMid(props){
+    return (
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{width: "280px"}}>
 
-    <span class="fs-4">To Do List</span>
+    <span class="fs-2">To Do List</span>
     <hr></hr>
     <ul class="nav nav-pills flex-column mb-auto">
-    <ViewsBar label = "All" active = "active" iconPath = {allIcon}/>
-    <ViewsBar label = "Today" active = "" iconPath = {todayIcon}/>
-    <ViewsBar label = "Next 7 Days" active = "" iconPath = {nextIcon}/>
+    <ViewsBar label = "All" active = {props.active[0]} goto = "/list/all" iconPath = {allIcon}/>
+    <ViewsBar label = "Today" active = {props.active[1]} goto = "/list/today" iconPath = {todayIcon}/>
+    <ViewsBar label = "Next 7 Days" active = {props.active[2]} goto = "/list/next"iconPath = {nextIcon}/>
     </ul>
-    </div>
+    </div>);
 
 
 }
