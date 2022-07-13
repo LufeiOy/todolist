@@ -18,9 +18,8 @@ function ToDoItems(){
             .then(response =>{
 
                 setList(response.data)
-                
             })
-    })
+    }, list)
     
     return (
         

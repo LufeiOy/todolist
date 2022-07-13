@@ -3,6 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import All from "./pages/todolist/all"
 import Today from "./pages/todolist/today"
 import Next from "./pages/todolist/next"
+import Calendar from "./pages/calendar";
 function App() {
   return (
       <Routes>
@@ -10,7 +11,7 @@ function App() {
         <Route path = "/list/all" element = {<All />} />
         <Route path = "/list/today" element = {<Today />} />
         <Route path = "/list/next" element = {<Next />} />
-        <Route path = "/calendar" element = {<All />} />
+        <Route path = "/calendar" element = {<Calendar />} />
         <Route path = "/matrix" element = {<All />} />
       </Routes>
     
