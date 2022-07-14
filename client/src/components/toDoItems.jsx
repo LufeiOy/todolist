@@ -20,14 +20,12 @@ function ToDoItems(){
                 setList(response.data)
             })
     }, list)
-    
+    //<div class="list-group w-100 " style={{"overflow-y":"scroll", height:"50vh"}}> for matrix
     return (
-        
-        <div class="list-group w-50">
+        <div class="list-group w-50 " style={{"overflow-y":"scroll"}}>
             <span class="fs-2 p-3">All items</span>
             
             {list["tasks"].map(createList)}
-  
         </div>
     );
 }

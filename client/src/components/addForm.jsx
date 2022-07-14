@@ -47,7 +47,7 @@ function AddForm(){
     const {title, description, date, start_time, end_time} = userInputs;
     return (
         
-        <div class = "p-3">
+        <div class = "p-3" style={{height:"100vh"}}>
             <span class="fs-2">Add New Item</span>
             <hr></hr>
         <form  style={{width: "500px", "font-size": "1.5em"}} onSubmit={submitHandler}>
@@ -64,20 +64,20 @@ function AddForm(){
         </div>
         <div class="form-group">
             <label >Date</label>
-            <input type="text" class="form-control" name="date" value={date} onChange={changeHandler} placeholder=""/>
+            <input type="date" class="form-control" name="date" value={date} onChange={changeHandler} placeholder=""/>
         </div>
         <div class="form-group">
             <label >Start Time</label>
-            <input type="text" class="form-control" name="start_time" value={start_time} onChange={changeHandler} placeholder=""/>
+            <input type="time" class="form-control" name="start_time" value={start_time} onChange={changeHandler} placeholder=""/>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
             <label >End time</label>
-            <input type="text" class="form-control" name="end_time" value={end_time} onChange={changeHandler}/>
+            <input type="time" class="form-control" name="end_time" value={end_time} onChange={changeHandler}/>
             </div>
             <div class="form-group col-md-4">
             <label >Urgency</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" class="form-control" name="urgency" onChange={changeHandler} >
                 <option selected>Choose...</option>
                 <option>Urgent</option>
                 <option>Not urgent</option>
@@ -85,7 +85,7 @@ function AddForm(){
             </div>
             <div class="form-group col-md-4">
             <label >Importance</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" class="form-control" name="importace" onChange={changeHandler}>
                 <option selected>Choose...</option>
                 <option>Important</option>
                 <option>Unimportant</option>
