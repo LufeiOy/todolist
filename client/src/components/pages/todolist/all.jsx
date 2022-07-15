@@ -13,7 +13,9 @@ function All(){
       <SidebarLeft active = {pages_left}/>
       <div class="b-example-divider b-example-vr"></div>
       <SidebarMid active = {pages_mid}/>
+      
       <ToDoItems />
+      
       <div class="b-example-divider b-right-vr"></div>
       <AddForm />
 

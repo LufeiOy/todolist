@@ -10,7 +10,7 @@ function createList(list){
               end_time  = {list.end_time }
             />
   }
-function ToDoItems(){
+function ToDoItems(props){
     const url = '/api/list/all';
     const [list, setList] = useState({"tasks":[]});
     useEffect(()=>{
@@ -21,13 +21,28 @@ function ToDoItems(){
             })
     }, list)
     //<div class="list-group w-100 " style={{"overflow-y":"scroll", height:"50vh"}}> for matrix
-    return (
-        <div class="list-group w-50 " style={{"overflow-y":"scroll"}}>
-            <span class="fs-2 p-3">All items</span>
+    //<div class="list-group w-50 " style={{"overflow-y":"scroll"}}>
+    if (props.type === "matrix"){
+        return (
+            <span class="fs-2 p-3 w-100" style={props.style}>{props.matrix}
+            <div class="list-group fs-6" style={{"overflow-y":"scroll", height:"41vh"}}>
             
-            {list["tasks"].map(createList)}
-        </div>
-    );
+                {list["tasks"].map(createList)}
+            </div>
+            </span>
+        );
+    }
+    else{
+        return (
+            <span class="fs-2 p-3 w-100"  >All items
+            <div class="list-group fs-6" style={{"overflow-y":"scroll", height:"94vh"}}>
+            
+                {list["tasks"].map(createList)}
+            </div>
+            </span>
+        );
+    }
+
 }
 
 export default ToDoItems;

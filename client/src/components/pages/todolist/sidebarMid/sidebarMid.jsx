@@ -5,7 +5,7 @@ const todayIcon = "M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333
 const nextIcon = "M18.807,0.337h-3.616v1.808c0,0.475-0.384,0.859-0.859,0.859c-0.474,0-0.859-0.384-0.859-0.859V0.337H6.731v1.808c0,0.475-0.384,0.859-0.859,0.859c-0.474,0-0.859-0.384-0.859-0.859V0.337h-3.82c-0.474,0-0.859,0.384-0.859,0.859v17.61c0,0.477,0.384,0.859,0.859,0.859h17.613c0.474,0,0.859-0.382,0.859-0.859V1.195C19.665,0.721,19.281,0.337,18.807,0.337z M17.948,17.946H2.052V4.528h15.896V17.946z"
 function SidebarMid(props){
     return (
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{width: "280px"}}>
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{height:"100vh",width: "280px"}}>
 
     <span class="fs-2">To Do List</span>
     <hr></hr>

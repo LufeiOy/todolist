@@ -47,7 +47,7 @@ function AddForm(){
     const {title, description, date, start_time, end_time} = userInputs;
     return (
         
-        <div class = "p-3" style={{height:"100vh"}}>
+        <div class = "p-3 w-50" style={{width:"50vh"}}>
             <span class="fs-2">Add New Item</span>
             <hr></hr>
         <form  style={{width: "500px", "font-size": "1.5em"}} onSubmit={submitHandler}>
