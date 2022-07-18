@@ -3,12 +3,13 @@ import {Routes, Route} from "react-router-dom";
 import All from "./pages/todolist/all"
 import Today from "./pages/todolist/today"
 import Next from "./pages/todolist/next"
-import Calendar from "./pages/calendar";
+import Calendar from "./pages/calendar/calendar";
 import Matrix from "./pages/matrix/matrix";
+import Home from "./pages/home/home";
 function App() {
   return (
       <Routes>
-        <Route path = "/" element = {<All />} />
+        <Route path = "/" element = {<Home />} />
         <Route path = "/list/all" element = {<All />} />
         <Route path = "/list/today" element = {<Today />} />
         <Route path = "/list/next" element = {<Next />} />

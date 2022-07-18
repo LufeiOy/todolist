@@ -7,6 +7,7 @@ import AddForm from "../../addForm";
 const pages_left = ["active", "", ""]
 const pages_mid = ["active", "", ""]
 function All(){
+    
     return (
     <div>
     <main class="d-flex flex-nowrap" style={{height:"100vh"}}>

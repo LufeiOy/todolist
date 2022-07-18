@@ -22,7 +22,7 @@ import axios from 'axios';
         </Form> */}
 
 function AddForm(){
-    const [userInputs, setInputs] = useState({id:'12',
+    const [userInputs, setInputs] = useState({
                                             title:'', 
                                             description:'', 
                                             date:'', 

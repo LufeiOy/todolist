@@ -1,7 +1,7 @@
 import React from "react";
-import SidebarLeft from "../sidebarLeft/sidebarLeft";
-import SidebarMid from "./todolist/sidebarMid/sidebarMid";
-import AddForm from "../addForm";
+import SidebarLeft from "../../sidebarLeft/sidebarLeft";
+import SidebarMid from "../todolist/sidebarMid/sidebarMid";
+import AddForm from "../../addForm";
 import BigCal from "./bigCalendar";
 const pages_left = ["", "active", ""]
 //const pages_mid = ["active", "", ""]

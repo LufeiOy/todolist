@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import Item from "./item";
 import axios from 'axios';
-function createList(list){
+export function createList(list){
     return <Item 
-              key = {list.id}
+              key = {list._id}
               title = {list.title}
               description = {list.description}
               start_time = {list.start_time }
@@ -12,11 +12,11 @@ function createList(list){
   }
 function ToDoItems(props){
     const url = '/api/list/all';
-    const [list, setList] = useState({"tasks":[]});
+    const [list, setList] = useState([]);
     useEffect(()=>{
         axios.get(url)
             .then(response =>{
-
+                console.log(response.data)
                 setList(response.data)
             })
     }, list)
@@ -27,7 +27,7 @@ function ToDoItems(props){
             <span class="fs-2 p-3 w-100" style={props.style}>{props.matrix}
             <div class="list-group fs-6" style={{"overflow-y":"scroll", height:"41vh"}}>
             
-                {list["tasks"].map(createList)}
+                {list.map(createList)}
             </div>
             </span>
         );
@@ -37,7 +37,7 @@ function ToDoItems(props){
             <span class="fs-2 p-3 w-100"  >All items
             <div class="list-group fs-6" style={{"overflow-y":"scroll", height:"94vh"}}>
             
-                {list["tasks"].map(createList)}
+                {list.map(createList)}
             </div>
             </span>
         );
