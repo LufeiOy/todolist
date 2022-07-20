@@ -18,7 +18,7 @@ function All(){
       <ToDoItems />
       
       <div class="b-example-divider b-right-vr"></div>
-      <AddForm />
+      
 
       </main>
     </div>);
