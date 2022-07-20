@@ -18,11 +18,12 @@ function NavBar(){
             <a class="nav-link" href="#">About</a>
           </li>
         </ul>
-          <button type="button" class="btn btn-primary">Sign In</button>
+        
+          <a class="btn btn-primary" href="/signin" >Sign In</a>
           <div style={{"padding-left":"10px", "padding-right":"10px"}}>
-          <button type="button" class="btn btn-outline-info"  >Sign Up</button>
+          <a class="btn btn-outline-info" href="/signup">Sign Up</a>
           </div>
-          <button type="button" class="btn btn-warning">Continue as Guest</button>
+          <a class="btn btn-warning" href="/list/all">Continue as Guest</a>
       </div>
     </div>
   </nav>

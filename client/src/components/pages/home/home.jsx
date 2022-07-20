@@ -4,7 +4,7 @@ import Sliding from "./sliding";
 import ThreeCircle from "./threeCircle";
 function Home(){
     return (
-        <div>
+        <div class="home_body">
             <NavBar/>
             <main>
             <Sliding/>
