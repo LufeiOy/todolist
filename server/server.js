@@ -9,7 +9,11 @@ app.get('/', (req, res) =>{
 const api = require('./routes/api');
 app.use('/api', api);
 
+let port = process.env.PORT;
 
-app.listen(3001, function(){
-    console.log("Server started on port 3001");
+if (port == null || port == ""){
+    port = 3001;
+}
+app.listen(port, function(){
+    console.log("Server started");
 })
