@@ -22,6 +22,7 @@ function ToDoItems(props){
     }, list)
     //<div class="list-group w-100 " style={{"overflow-y":"scroll", height:"50vh"}}> for matrix
     //<div class="list-group w-50 " style={{"overflow-y":"scroll"}}>
+    console.log(list)
     if (props.type === "matrix"){
         return (
             <span class="fs-2 p-3 w-100" style={props.style}>{props.matrix}
