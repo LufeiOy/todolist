@@ -1,4 +1,5 @@
 import React, {useState}  from "react";
+import URLs from "./config/URLs";
 import axios from 'axios';
 // import Form from 'react-bootstrap/Form';
 // import Button from 'react-bootstrap/Button'
@@ -38,7 +39,7 @@ function AddForm(){
     function submitHandler(e){
         //e.preventDefault()
         console.log(userInputs)
-        axios.post('/api/list/add', userInputs, {
+        axios.post(`${URLs["API_URL"]}/api/list/add`, userInputs, {
             headers:{
                 'Content-Type': 'application/json'
             }

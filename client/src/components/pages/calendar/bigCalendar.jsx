@@ -2,7 +2,8 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from 'moment'
+import moment from 'moment';
+import URLs from "../../config/URLs";
 const localizer = momentLocalizer(moment)
 
 function convertCalender(list){
@@ -19,7 +20,7 @@ function convertCalender(list){
 }
 
 function BigCal(){
-  const url = '/api/list/all';
+  const url = `${URLs["API_URL"]}/api/list/all`;
   const [list, setList] = useState([]);
   useEffect(()=>{
       axios.get(url)
