@@ -12,10 +12,13 @@ function Sliding(){
   
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
+              <h1>To Do List With Calender and Eisenhower Matrix</h1>
+              <p>Sign up for an account today or continue as a guest to organize all your to-dos and make better decisions with Eisenhower Matrix !</p>
               <p>
               <a class="btn btn-lg btn-primary" href="/signup">Start to Use</a>
+              <a style={{"padding-left":"10px"}}>
+              <a class="btn btn-warning btn-lg" href="/list/all">Guest Mode</a>
+              </a>
               </p>
             </div>
           </div>

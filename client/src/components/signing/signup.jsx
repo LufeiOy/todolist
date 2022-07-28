@@ -1,19 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
+import URLs from "../config/URLs";
+import axios from 'axios';
 
 function Signup(){
+    const [userInputs, setInputs] = useState({
+        email:'', 
+        password:''});
+
+    function changeHandler(e) {
+        
+        setInputs({...userInputs, 
+                    [e.target.name]: e.target.value})
+    }
+    function submitHandler(e){
+        //e.preventDefault()
+        console.log(userInputs)
+        axios.post(`${URLs["API_URL"]}/api/signup`, userInputs, {
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+    }
     return (
         <div class="sign-form text-center">
         <main class="form-signin w-100 m-auto">
-        <form>
+        <form onSubmit={submitHandler}>
             <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" onChange={changeHandler} />
             <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" onChange={changeHandler} />
             <label for="floatingPassword">Password</label>
             </div>
 

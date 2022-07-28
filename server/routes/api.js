@@ -78,6 +78,10 @@ router.post('/list/add', express.json(), (req, res) => {
      
     
 })
+router.post('/signup', express.json(), (req, res) => {
+    console.log(req.body)
+})
+
 
 
 
