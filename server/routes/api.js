@@ -35,8 +35,8 @@ const guest = new User({
     finished: false
     }]
 })
-let rawdata = fs.readFileSync('./data.json');
-let list = JSON.parse(rawdata);
+
+//User.insertMany([guest])
 
 router.get('/', (req, res) => {
     res.send("api!!!");
@@ -48,7 +48,10 @@ router.get('/list/all', (req, res) => {
         if(err){
             console.log(err);
         }else{
-            res.end(JSON.stringify(user[0]["tasks"]));
+            //filter for only not finished tasks
+            res.end(JSON.stringify(user[0]["tasks"].filter((task) => {
+                return !task['finished']
+            })));
         }
     })
     
@@ -78,11 +81,52 @@ router.post('/list/add', express.json(), (req, res) => {
      
     
 })
+router.put('/list/update/:id', (req, res) => {
+    console.log(req.params.id)
+    User.findOneAndUpdate(
+        { username: "Guest",
+            tasks:{$elemMatch: {_id: req.params.id}} }, 
+        { $set: {
+            'tasks.$': {
+                finished: true
+            }
+        } },
+       function (error, success) {
+             if (error) {
+                 console.log(error);
+             } else {
+                 console.log(success);
+             }
+         });
+     
+    
+})
+router.delete('/list/delete/:id', (req, res) => {
+    console.log(req.params.id)
+    User.findOneAndUpdate(
+        { username: "Guest" }, 
+        { $pull: {
+                'tasks': {
+                    _id: req.params.id
+                }
+            } },
+       function (error, success) {
+             if (error) {
+                 console.log(error);
+             } else {
+                 console.log(success);
+             }
+         });
+     
+    
+})
 router.post('/signup', express.json(), (req, res) => {
     console.log(req.body)
 })
 
+// for future development check 23:00 https://www.youtube.com/watch?v=fgTGADljAeg&list=PLDrsIhIkpKkHff2b687KOmOespvSNDyTk&index=2&t=1483s
+// async function getUser(){
 
-
+// }
 
 module.exports = router;

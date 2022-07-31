@@ -1,4 +1,5 @@
 export default {
-    //https://todolist-backend.lufei.app
+    //http://localhost:3001
+    //"https://todolist-backend.lufei.app"
     API_URL:"https://todolist-backend.lufei.app"
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import SvgIcon from '@mui/material/SvgIcon';
+import axios from 'axios';
+import URLs from "./config/URLs";
 
 var completed = (<label class="list-group-item d-flex gap-3 bg-light">
 <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0 pe-none" disabled type="checkbox" value=""  style={{"font-size": "1.375em"}}/>
@@ -15,13 +17,17 @@ var completed = (<label class="list-group-item d-flex gap-3 bg-light">
 
 
 function Item(props){
+  function changeHandler(e) {
+    axios.delete(`${URLs["API_URL"]}/api/list/delete/${props.id}`)
 
+    }
+    
     return (
         <label class="list-group-item d-flex gap-3">
-    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style={{"font-size": "1.375em"}}/>
+    <input class="form-check-input flex-shrink-0" type="checkbox" id={props.id} value="" onChange={changeHandler} style={{"font-size": "1.375em"}}/>
     <span >
       <strong style={{"font-size": "1.375em"}}>{props.title}</strong>
-      <p style={{"font-size": "1.2em"}}>Description: {props.description}</p>
+      <p style={{"font-size": "1.2em"}}>Description: {props.description} </p>
       <small class="d-block text-muted" style={{"font-size": "1em"}}>
       <SvgIcon {...props}>
         <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>

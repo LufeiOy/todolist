@@ -5,6 +5,7 @@ import URLs from "./config/URLs";
 export function createList(list){
     return <Item 
               key = {list._id}
+              id = {list._id}
               title = {list.title}
               description = {list.description}
               start_time = {list.start_time }
@@ -19,7 +20,7 @@ function ToDoItems(props){
             .then(response =>{
                 setList(response.data)
             })
-    }, list)
+    }, [list])
     //<div class="list-group w-100 " style={{"overflow-y":"scroll", height:"50vh"}}> for matrix
     //<div class="list-group w-50 " style={{"overflow-y":"scroll"}}>
     if (props.type === "matrix"){

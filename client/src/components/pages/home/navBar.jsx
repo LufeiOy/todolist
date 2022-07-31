@@ -15,11 +15,11 @@ function NavBar(){
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/signup">About</a>
           </li>
         </ul>
         
-          <a class="btn btn-primary" href="/signin" >Sign In</a>
+          <a class="btn btn-primary" href="/signup" >Sign In</a>
           <div style={{"padding-left":"10px", "padding-right":"10px"}}>
           <a class="btn btn-outline-info" href="/signup">Sign Up</a>
           </div>
